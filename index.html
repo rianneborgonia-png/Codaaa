@@ -12,7 +12,39 @@
       padding: 0;
       box-sizing: border-box;
     }
+<!-- EXIT SCREEN -->
+<div id="exit-screen">
+  <div class="exit-box">
+    <h2>Thank You for Using Codaa</h2>
+    <p>Your session is ending.  
+       Please use the application responsibly and close the window safely.</p>
 
+    <button id="close-btn">Exit Application</button>
+
+    <p class="exit-legal">
+      Codaa is intended for educational and non-commercial use only.
+      No personal or sensitive data should be stored or transmitted.
+    </p>
+  </div>
+</div>
+
+<script>
+  // Trigger Exit Screen
+  function showExitScreen() {
+    document.getElementById("exit-screen").classList.add("show");
+  }
+
+  // Close Button Action
+  document.getElementById("close-btn").addEventListener("click", () => {
+    // Attempt to close the tab (works only if opened by script)
+    window.open('', '_self', '');
+    window.close();
+
+    // Fallback notice for browsers that block window.close()
+    alert("You may now close the tab manually. Thank you!");
+  });
+</script>
+{
     body, html {
       height: 100%;
       font-family: Arial, sans-serif;
